@@ -35,12 +35,14 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(137, 103);
+            label1.BackColor = SystemColors.GradientInactiveCaption;
+            label1.Location = new Point(61, 364);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(171, 68);
             label1.TabIndex = 0;
             label1.Text = "label1";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -56,7 +58,6 @@
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
