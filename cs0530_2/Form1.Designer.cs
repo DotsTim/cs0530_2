@@ -36,7 +36,7 @@
             // label1
             // 
             label1.BackColor = SystemColors.GradientInactiveCaption;
-            label1.Location = new Point(61, 364);
+            label1.Location = new Point(174, 194);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.Yes;
             label1.Size = new Size(171, 68);
