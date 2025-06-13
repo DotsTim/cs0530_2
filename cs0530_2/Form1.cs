@@ -20,7 +20,7 @@ namespace cs0530_2
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           // counter++;
+            // counter++;
 
 
             var mpos = MousePosition;
@@ -59,14 +59,18 @@ namespace cs0530_2
             label2.Top += vy2;
             if (label2.Left < 0)
             {
-
-
+                vx2 = Math.Abs(vx2);
 
             }
+            else if (label2.Top<0)
+            {
+                
+            }
+        }  
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-        }
+                private void label2_Click(object sender, EventArgs e)
+                {
+
+                }
     }
 }
