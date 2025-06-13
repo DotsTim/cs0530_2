@@ -5,21 +5,21 @@ namespace cs0530_2
     public partial class Form1 : Form
     {
 
-        int []vx =new int[3] ;
-        int []vy = new int[3];
-       
+        int[] vx = new int[3];
+        int[] vy = new int[3];
+
         static Random random = new Random();
         public Form1()
         {
             InitializeComponent();
             //MessageBox.Show($"{label1.Right}");
-            vx[0] = random.Next(-10, 11);
-            vy[0] = random.Next(-10, 11);
-            vx[1] = random.Next(-10, 11);
-            vy[1] = random.Next(-10, 11);
-            vx[2] = random.Next(-10, 11);
-            vy[2] = random.Next(-10, 11);
-          
+            for (int i = 0;i<3+i++)
+            {
+                vx[i] = random.Next(-10, 11);
+                vy[i] = random.Next(-10,11);
+
+            }
+
             label1.Left = random.Next(ClientSize.Width);
         }
 
@@ -67,15 +67,23 @@ namespace cs0530_2
                 vx[1] = Math.Abs(vx[1]);
 
             }
-            else if (label2.Top<0)
+            else if (label2.Top < 0)
             {
-                
+
             }
-        }  
+        }
 
-                private void label2_Click(object sender, EventArgs e)
-                {
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-                }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                MessageBox.Show($"{i}");
+            }
+        }
     }
 }
