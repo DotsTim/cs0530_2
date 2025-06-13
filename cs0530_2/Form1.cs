@@ -1,20 +1,25 @@
+using System;
+
 namespace cs0530_2
 {
     public partial class Form1 : Form
     {
 
-        int vx = -20;
-        int vy = -20;
-        int vx2 = -30;
-        int vy2 = -30;
+        int []vx =new int[3] ;
+        int []vy = new int[3];
+       
         static Random random = new Random();
         public Form1()
         {
             InitializeComponent();
             //MessageBox.Show($"{label1.Right}");
-            vx = random.Next(-10, 11);
-            vy = random.Next(-10, 11);
-
+            vx[0] = random.Next(-10, 11);
+            vy[0] = random.Next(-10, 11);
+            vx[1] = random.Next(-10, 11);
+            vy[1] = random.Next(-10, 11);
+            vx[2] = random.Next(-10, 11);
+            vy[2] = random.Next(-10, 11);
+          
             label1.Left = random.Next(ClientSize.Width);
         }
 
@@ -26,25 +31,25 @@ namespace cs0530_2
             var mpos = MousePosition;
             var fpos = PointToClient(mpos);
             Text = $"{mpos.X},{mpos.Y}/{fpos.X},{fpos.Y}";
-            label1.Left += vx;
-            label1.Top += vy;
+            label1.Left += vx[0];
+            label1.Top += vy[0];
 
             if (label1.Left < 0)
             {
 
-                vx = Math.Abs(vx);
+                vx[0] = Math.Abs(vx[0]);
             }
             if (label1.Top < 0)
             {
-                vy = Math.Abs(vx);
+                vy[0] = Math.Abs(vx[0]);
             }
             if (label1.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vy);
+                vx[0] = -Math.Abs(vy[0]);
             }
             if (label1.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy);
+                vy[0] = -Math.Abs(vy[0]);
             }
             if (
                 (label1.Left < fpos.X)
@@ -55,11 +60,11 @@ namespace cs0530_2
                 timer1.Stop();
             }
 
-            label2.Left += vx2;
-            label2.Top += vy2;
+            label2.Left += vx[1];
+            label2.Top += vy[1];
             if (label2.Left < 0)
             {
-                vx2 = Math.Abs(vx2);
+                vx[1] = Math.Abs(vx[1]);
 
             }
             else if (label2.Top<0)
