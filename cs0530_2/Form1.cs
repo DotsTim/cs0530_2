@@ -14,17 +14,17 @@ namespace cs0530_2
         {
             InitializeComponent();
 
-            labels[0] = new Label();
-            labels[0].AutoSize = true;
-            labels[0].Text = "??";
-            labels[0].Font = new Font("Yu Gothic UI", 24F);
-            Controls.Add(labels[0]);
-            //MessageBox.Show($"{label1.Right}");
+           
+
             for (int i = 0; i < 3; i++)
             {
                 vx[i] = random.Next(-10, 11);
                 vy[i] = random.Next(-10, 11);
-
+                labels[i] = new Label();
+                labels[i].AutoSize = true;
+                labels[i].Text = "??";
+                labels[i].Font = new Font("Yu Gothic UI", 24F);
+                Controls.Add(labels[i]);
             }
 
             label1.Left = random.Next(ClientSize.Width);
@@ -40,6 +40,13 @@ namespace cs0530_2
             Text = $"{mpos.X},{mpos.Y}/{fpos.X},{fpos.Y}";
             label1.Left += vx[0];
             label1.Top += vy[0];
+
+            for (int i=0;i<3;i++)
+            {
+                labels[i].Left += vx[i];
+                labels[i].Top += vy[i];
+
+            }
 
             if (label1.Left < 0)
             {
@@ -116,3 +123,4 @@ namespace cs0530_2
         }
     }
 }
+
