@@ -7,16 +7,23 @@ namespace cs0530_2
 
         int[] vx = new int[3];
         int[] vy = new int[3];
+        Label[] labels = new Label[100];
 
         static Random random = new Random();
         public Form1()
         {
             InitializeComponent();
+
+            labels[0] = new Label();
+            labels[0].AutoSize = true;
+            labels[0].Text = "??";
+            labels[0].Font = new Font("Yu Gothic UI", 24F);
+            Controls.Add(labels[0]);
             //MessageBox.Show($"{label1.Right}");
-            for (int i = 0;i<3+i++)
+            for (int i = 0; i < 3; i++)
             {
                 vx[i] = random.Next(-10, 11);
-                vy[i] = random.Next(-10,11);
+                vy[i] = random.Next(-10, 11);
 
             }
 
@@ -83,6 +90,28 @@ namespace cs0530_2
             for (int i = 0; i < 10; i++)
             {
                 MessageBox.Show($"{i}");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int i;
+            for (i = 0; i < 10; i++)
+            {
+                if (i == 2)
+                {
+                    continue;
+                }
+                if (i == 5)
+                {
+                    break;
+                }
+                MessageBox.Show(i.ToString());
             }
         }
     }
